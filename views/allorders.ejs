@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="js/form.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/form.css">
+    <title>Assgnment4</title>
+</head>
+
+<h2>Your orders</h2>
+
+<table>
+    <thead>
+    <tr>
+        <th>Name:</th>
+        <th>Email: </th>
+        <th>Phone:</th>
+        <th>Address:</th>
+        <th>City:</th>
+        <th>Address:</th>
+        <th>Post Code:</th>
+        <th>Province:</th>
+        <th>Diapers</th>
+        <th>shirt</th>
+        <th>wipes</th>
+        <th>Formula</th>
+        <th>subTotal</th>
+        <th>tax</th>
+        <th>total</th>
+    </tr>
+</thead>
+<tbody>
+    <% for(let product of products) { %>
+    <tr>
+        <td><%=product.name %></td>
+        <td><%=product.email%></td>
+        <td><%=product.phone%></td>
+        <td><%=product.address%></td>
+        <td><%=product.city%></td>
+        <td><%=product.postCode%></td>
+        <td><%=product.povince%></td>
+        <td><%=product.diapers%></td>
+        <td><%=product.wipes%></td>
+        <td><%=product.shirt%></td>
+        <td><%=product.formula%></td>
+        <td><%=product.subTotal%></td>
+        <td><%=product.tax%></td>
+        <td><%=product.total%></td>
+    </tr>
+    <% } %>
+</tbody>
+</table>

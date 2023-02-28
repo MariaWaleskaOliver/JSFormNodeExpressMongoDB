@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Assignment 4</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="js/form.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/form.css">
+</head>
+<body>
+  <section class="w50">
+    <form name="myform" method="Post" onsubmit="return formSubmit();" action="">
+      
+      
+      <label>Name</label>
+      <input id="name" placeholder="First Last" type="text" name="name" /><br />
+
+      <label>Email</label>
+      <input
+        id="email"
+        placeholder="email@domain.com"
+        type="email"
+        name="email"
+      /><br />
+      
+      <label>Phone</label>
+      <input
+        id="phone"
+        placeholder="123-123-1234"
+        type="phone"
+        name="phone"
+      /><br />
+
+      <label>Address</label>
+      <input
+        id="address"
+        placeholder="Address"
+        type="address"
+        name="address"
+      /><br />
+
+      <label>City</label>
+      <input
+       id="city" 
+       placeholder="City"
+        type="text" 
+        name="city" 
+        /><br />
+
+      <label>Post Code :</label>
+      <input 
+      id="postCode"
+       placeholder="Post Code" 
+       type="text" 
+       name="postCode" 
+       /><br />
+
+      <label>Which Province?</label>
+      <select name="province" id="province">
+        <option value="">----- Select -----</option>
+        <option value="ON">ON</option>
+        <option value="QC">QC</option>
+        <option value="NB">NB</option>
+        <option value="BC">BC</option>
+        <option value="NS">NS</option>
+        <option value="AB">AB</option>
+        <option value="NL">NL</option>
+        <option value="PEI">PEI</option>
+        <option value="SK">SK</option>
+        <option value="MB">SK</option>
+      </select>
+
+      <br /><br />
+
+      <label>Diapers :$ 10 </label>
+      <input
+        id="diapers"
+        placeholder="Enter a quantity"
+        type="text"
+        name="diapers"
+      /><br />
+     
+      <label> T-shirt :$ 20 </label>
+      <input
+        id="shirt"
+        placeholder="Enter a quantity"
+        type="text"
+        name="shirt"
+      /><br />
+
+      <label>Wipes : $ 30 </label>
+      <input
+        id="wipes"
+        placeholder="Enter a quantity"
+        type="text"
+        name="wipes"
+      /><br />
+
+      <label>Formula : $ 40 </label>
+      <input
+        id="formula"
+        placeholder="Enter a quantity"
+        type="text"
+        name="formula"
+      /><br />
+
+      <input type="submit" value="Submit" />
+      <p id="errors"></p>
+    </form>
+  </section>
+  <section class="w50">
+    <div class="formData">
+
+      <% if(typeof(errors) != "undefined") { 
+          for(let err of errors) { %>
+            <p> <%= err.msg %> </p>
+          <% }
+         } %>
+
+      <% if(typeof(name) != "undefined"){ %>
+      <p id="formResult">Your Receipt:</p>
+      <table>
+        <tr>
+          <th>Name:</th>
+          <th><%= name %></th>
+          <td></td>
+        </tr>
+        <tr>
+          <th>Email:</th>
+          <td><%= email %></td>
+        </tr>
+        <tr>
+          <th>Phone:</th>
+          <td><%= phone %></td>
+        </tr>
+        <tr>
+          <th>Address</th>
+          <td><%= address %></td>
+        </tr>
+        <tr>
+          <th>City</th>
+          <td><%=city %></td>
+        </tr>
+        <tr>
+          <th>Post Code</th>
+          <td><%= postCode %></td>
+        </tr>
+        <tr>
+          <th>Province:</th>
+          <td><%= province %></td>
+        </tr>
+
+        <% if(diapers != 0){ %>
+        <tr>
+          <th>Diapers: Quantity</th>
+          <td><%= diapers %></td>
+        </tr>
+        <% } %>
+
+        <% if(shirt != 0){ %>
+          <tr>
+            <th>T-Shirt: Quantity</th>
+            <td><%=shirt%></td>
+          </tr>
+          <% } %>
+
+        <% if(wipes != 0){ %>
+        <tr>
+          <th>Wipes: Quantity</th>
+          <td><%=wipes%></td>
+        </tr>
+        <% } %>
+
+        <% if(formula != 0){ %>
+        <tr>
+          <th>Formula: Quantity</th>
+          <td><%=formula%></td>
+        </tr>
+        <% } %>
+        <tr>
+          <th>Subtotal:</th>
+          <td><%=subTotal%></td>
+        </tr>
+        <tr>
+          <th>Tax:</th>
+          <td><%=tax%></td>
+        </tr>
+        <tr>
+          <th>Total after Tax:</th>
+          <td><%=total%></td>
+        </tr>
+      </table>
+      <% } %>
+    </div>
+  </section>
+  <div class="clear"></div>
+</body>

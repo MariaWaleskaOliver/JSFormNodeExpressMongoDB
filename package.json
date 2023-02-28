@@ -1,0 +1,21 @@
+{
+  "name": "awesomesite",
+  "version": "1.0.0",
+  "description": "Awesome website",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "*",
+    "ejs": "*",
+    "express": "^4.17.1",
+    "express-validator": "^6.14.0",
+    "mongoose": "^6.2.11"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "awesome"
+  ],
+  "author": "Davneet",
+  "license": "ISC"
+}
